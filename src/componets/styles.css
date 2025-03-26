@@ -1,40 +1,53 @@
-ul {
-    list-style: none;
-    padding: 0;
-}
-a {
-    text-decoration: none;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    box-sizing: border-box;
-}
-
-
 .form-login {
     width: 600px;
     margin: 50px auto;
     padding: 20px;
-    border-radius: 20px;
-    background-color: #fff;
+    border-radius: 10px;
+    background-color: whitesmoke;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1px solid grey;
 }
 
-.form-login input {
+h2 {
+    font-size: 25px;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: 800;
+    color: black;
+}
+
+h4 {
+    font-size: 15px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+    color: grey;
+    margin-bottom: 30px;
+}
+
+.first-last-name-input {
+    display: flex;
+    width: 100%;
+}
+
+.first-input-container {
+    display: block;
+    margin-right: 15px;
+}
+
+.second-input-container {
+    display: block;
+    margin-left: 15px;
+}
+
+.form-login .input {
     display: block;
     width: 100%;
     padding: 20px;
     border: 1px solid #ccc;
     margin: 0 auto 40px auto;
-    border-radius: 20px;
-    font-size: 16px;
+    border-radius: 10px;
+    font-size: 14px;
     outline: none;
 }
 
@@ -43,16 +56,19 @@ a {
 }
 
 button {
+    display: flex;
     width: 100%;
-    background-color: #2979ff;
-    text-transform: uppercase;
-    font-size: 20px;
+    background-color: black;
+    font-size: 16px;
     padding: 20px;
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
     border-radius: 10px;
     cursor: pointer;
     border: none;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
 }
 button:active {
     transform: translateY(5px);
@@ -61,30 +77,51 @@ button:active {
 }
 
 button:hover {
-    background-color: #1448a0;
+    background-color: rgb(37, 37, 37);
 }
 
-.form__content {
+.inputpassword {
     position: relative;
 }
 
+.password_visible {
+    display: none;
+}
 
-.show {
+.inputpassword.active .password_invisible {
+    display: none;
+}
+
+.inputpassword.active .password_visible {
+    display: block;
+}
+
+.inputpassword i {
     position: absolute;
-    top: 70%;
     right: 20px;
-    transform: translateY(-50%);
+    top: 70%;
     cursor: pointer;
-    color: white;
+    transform: translateY(-50%);
+}
+
+.input {
+    background: #f3f5f8;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #212531;
 }
 
 .label {
     display: flex;
     color: black;
-    font-size: 20px;
+    font-size: 14px;
     float: left;
     margin-bottom: 10px;
     padding-left: 10px;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
 }

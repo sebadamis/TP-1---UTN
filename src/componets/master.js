@@ -1,20 +1,33 @@
-window.addEventListener("load", () => {
+export function EyeclickBtn (){
 
-    const show = document.querySelector(".show");
-    show.addEventListener("click", (e) => {
-        // previousElementSibling
-        const input = e.target.previousElementSibling;
-        const inputType = input.getAttribute("type");
-        if (inputType === `text`) {
-            input.setAttribute("type", "password");
-
-            show.classList.remove("fa-eye-slash");
-        } else {
-            input.setAttribute("type", "text");
-
-            show.classList.add("fa-eye-slash");
-        }
+    document.querySelectorAll('[data-togglebutton="password"]').forEach((item) => {
+        item.addEventListener("click", () => {
+            let inp = item.closest("[data-toggleblock]").querySelector(".input");
+            if (inp.type === "password") {
+                inp.type = "text";
+                item.closest("[data-toggleblock]").classList.add("active");
+            } else {
+                inp.type = "password";
+                item.closest("[data-toggleblock]").classList.remove("active");
+            }
+        });
     });
-});
+
+}
+export default EyeclickBtn();
+
+
+    // document.querySelectorAll('[data-togglebutton="password"]').forEach((item) => {
+    //     item.addEventListener("click", () => {
+    //         let inp = item.closest("[data-toggleblock]").querySelector(".input");
+    //         if (inp.type === "password") {
+    //             inp.type = "text";
+    //             item.closest("[data-toggleblock]").classList.add("active");
+    //         } else {
+    //             inp.type = "password";
+    //             item.closest("[data-toggleblock]").classList.remove("active");
+    //         }
+    //     });
+    // });
 
 

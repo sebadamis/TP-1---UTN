@@ -1,5 +1,5 @@
-import './App.css';
 import RegisterForm from './componets/registerForm';
+import "./Global.css";
 
 function App() {
   

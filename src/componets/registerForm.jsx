@@ -1,74 +1,91 @@
 import "./styles.css";
+import "../Global.css";
 import "./master.js";
+import { EyeclickBtn } from "./master.js";
 
 
 function registerForm() {
     return (
             <>
 
-                <h2>Register Form</h2>
-
                 <form className="form form-login">
 
-                    <label className="label">Firstname</label>
-                    <input  
-                            type="text"
-                            name="firstname"
-                            className="input"
-                            autoComplete="off"
-                            placeholder="Enter your Firstname"
-                            required/>
+                    <h2>Create an Account</h2>
+                    <h4>Enter your information to register</h4>
 
-                    <label className="label">Lastname</label>
-                    <input
-                        type="text"
-                        name="lastname"
-                        className="input"
-                        autoComplete="off"
-                        placeholder="Enter your Lastname"
-                        required/>
+                    <div className="first-last-name-input">
+
+                        <div className="first-input-container">
+                            <label className="label">First Name</label>
+                            <input
+                                type="text"
+                                name="firstname"
+                                className="input"
+                                placeholder="John"
+                                required=""/>
+                        </div>
+
+                        <div className="second-input-container">
+                            <label className="label">Last Name</label>
+                            <input
+                                type="text"
+                                name="lastname"
+                                className="input"
+                                placeholder="Doe"
+                                required=""/>
+                        </div>
+                    </div>
 
                     <label className="label">E-mail</label>
-                    <input 
+                    <input
                         type="email"
                         name="email"
                         className="input"
-                        autoComplete="off"
-                        placeholder="John@mail.com"
-                        required/>
+                        placeholder="john.doe@mail.com"
+                        required=""/>
 
-                    <label className="label">Telephone</label>
-                    <input 
+                    <label className="label">Phone</label>
+                    <input
                         type="tel"
-                        name="telephone"
+                        name="phone"
                         className="input"
                         placeholder="+(11)1234-5678"
-                        required/>
-                    
-                    <div className="form__content">
-                        
-                        <label className="label">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            className="password"
-                            placeholder="Enter your password"/>
-                        <i className="fa fa-eye show"/>
+                        required=""/>
+
+                    <label className="label">Password</label>
+                    <div className="inputpassword" data-toggleblock="password">
+                        <input  type="password"
+                                name="password"
+                                id="pass1"
+                                className="input"
+                                placeholder="*******"/>
+
+                        <i  id="icon1" className="fa-solid fa-eye password_invisible"
+                            data-togglebutton="password" onClick={EyeclickBtn}/>
+                        <i  id="icon2" className="fa-solid fa-eye-slash password_visible"
+                            data-togglebutton="password" onClick={EyeclickBtn}/>
+
                     </div>
 
-                    <div className="form__content">
+                    <label className="label">Confirm your Password</label>
+                    <div className="inputpassword" data-toggleblock="password">
+                        <input  id="pass2"
+                                type="password"
+                                name="password"
+                                className="input"
+                                placeholder="*******"/>
 
-                        <label className="label">Confirm Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            className="password"
-                            placeholder="Confirm your password"/>
-                        <i className="fa fa-eye show"/>
+                        <i  id="icon3" className="fa-solid fa-eye password_invisible"
+                            data-togglebutton="password" onClick={EyeclickBtn}/>
+                        <i  id="icon4" className="fa-solid fa-eye-slash password_visible"
+                            data-togglebutton="password" onClick={EyeclickBtn}/>
+
                     </div>
 
-                    <button type="submit">Send</button>
+                    <button type="submit">Register</button>
+
                 </form>
+
 
         </>
     )
